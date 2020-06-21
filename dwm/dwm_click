@@ -1,0 +1,2 @@
+#!/bin/zsh 
+alacritty -e echo "$1"

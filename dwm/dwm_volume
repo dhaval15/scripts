@@ -1,0 +1,12 @@
+#!/bin/zsh 
+echo "Hello" >> $HOME/scripts/log.txt
+case $BUTTON in
+	1) alacritty;;
+	3) alacritty -e htop;;
+esac
+volume=$(pamixer --get-volume)
+mute=$(pamixer --get-mute)
+if [ "$mute" = "true" ]; then
+	icon="M "
+fi
+echo "   $volume $icon"

@@ -1,0 +1,2 @@
+#!/bin/zsh
+dmenu2_run -h 28 -fn 'monospace' -nb "#262626" -nf "#ffeedd" -sb "#ffeedd" -sf "#262626" -p Run

@@ -1,0 +1,3 @@
+#!/bin/zsh 
+cd "$HOME/Write/"
+alacritty --config-file $HOME/.config/alacritty/feather/alacritty.yml --class VimWriter -t Feather -e fvim

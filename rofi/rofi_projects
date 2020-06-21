@@ -1,0 +1,5 @@
+#!/bin/zsh
+projdir=$(ls $HOME/Projects/ | dmenu -theme projects -p Projects)
+if [ "$projdir" ]; then
+	hashcode $HOME/Projects/$projdir
+fi

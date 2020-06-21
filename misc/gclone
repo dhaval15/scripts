@@ -1,0 +1,3 @@
+#!/bin/zsh
+cd $HOME/Cloned
+git clone https://github.com/$1.git
