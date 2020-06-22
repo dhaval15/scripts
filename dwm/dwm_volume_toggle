@@ -5,4 +5,4 @@ if [ "$mute" = "true" ]; then
 else
 	pamixer -m
 fi
-pkill -RTMIN+5 dwmblocks
+pkill -RTMIN+6 dwmblocks

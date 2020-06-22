@@ -1,2 +1,6 @@
 #!/bin/zsh 
-echo "   $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g) "
+case $BUTTON in
+	1) alacritty -e htop;;
+	3) lxtask;;
+esac
+echo "     $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)  "

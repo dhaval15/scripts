@@ -1,8 +1,11 @@
 #!/bin/zsh 
+case $BUTTON in
+	1) networkmanager_dmenu -theme wifi;;
+esac
 connected=$(iwgetid | awk -F'["]' '{print $2}')
 if [ "$connected" = "" ]; then
-	echo "  Disconnected "
+	echo "   Disconnected  "
 else
-	strength=$(awk '/^\s*w/ { print int($3 * 100 / 70) "% " }' /proc/net/wireless)
-	echo "  $connected $strength"
+	strength=$(awk '/^\s*w/ { print int($3 * 100 / 70) "%" }' /proc/net/wireless)
+	echo "    $connected  $strength  "
 fi

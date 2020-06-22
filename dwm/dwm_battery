@@ -3,8 +3,8 @@ battery="/sys/class/power_supply/BAT0/"
 
 capacity=$(cat "$battery"/capacity)
 bstatus=$(cat "$battery"/status)
-icon=""
+icon=""
 if [ "$bstatus" = "Charging" ]; then
-	icon=""
+	icon=""
 fi
-echo "$icon   $capacity% "
+echo "  $icon  $capacity%  "
