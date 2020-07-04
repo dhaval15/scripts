@@ -1,0 +1,5 @@
+#!/bin/zsh 
+arg=$(tmux list-sessions | awk -F'[:]' '{print $1}' | dmenu2 -h 20 -fn 'monospace 9' -nb "#231F20" -nf "#BA8866" -sb "#BA8866" -sf "#231F20" -p Tmux) 
+if [ "$arg" ]; then
+	alacritty -t $arg -e tmux new-session -A -s $arg 
+fi
