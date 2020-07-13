@@ -1,0 +1,21 @@
+#!/bin/sh 
+
+FLUTTER_VM_PORT="~/.flutter_vm"
+FLUTTER_PID="~/.flutter_pid"
+
+main(){
+	if [ "$1" == "-rl" ];then
+		$HOME/development/flutter-master/bin/flutter run -d linux -v --pid-file $FLUTTER_PID --vmservice-out-file $FLUTTER_VM_PORT
+	elif [ "$1" == "-ra" ];then
+		$HOME/development/flutter/bin/flutter run -v --pid-file $FLUTTER_PID --vmservice-out-file $FLUTTER_VM_PORT
+	elif [ "$1" == "-df" ];then
+		firefox --new-tab $(awk -F 'ws://|ws' '{print $2}' $FLUTTER_VM_PORT) 
+	elif [ "$1" == "-hl" ];then
+		pkill -F $FLUTTER_PID --signal SIGUSR1
+	elif [ "$1" == "-hr" ];then
+		pkill -F $FLUTTER_PID --signal SIGUSR2
+	fi
+}
+
+main $@
+
