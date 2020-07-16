@@ -1,13 +1,21 @@
 #!/bin/sh 
 
-FLUTTER_VM_PORT="~/.flutter_vm"
-FLUTTER_PID="~/.flutter_pid"
+FLUTTER_VM_PORT="$HOME/.flutter_vm"
+FLUTTER_PID="$HOME/.flutter_pid"
 
 main(){
 	if [ "$1" == "-rl" ];then
-		$HOME/development/flutter-master/bin/flutter run -d linux -v --pid-file $FLUTTER_PID --vmservice-out-file $FLUTTER_VM_PORT
+		$HOME/development/flutter-master/bin/flutter run -d linux --pid-file $FLUTTER_PID --vmservice-out-file $FLUTTER_VM_PORT
+	elif [ "$1" == "-rlv" ];then
+		$HOME/development/flutter-master/bin/flutter run -v -d linux --pid-file $FLUTTER_PID --vmservice-out-file $FLUTTER_VM_PORT
 	elif [ "$1" == "-ra" ];then
+		$HOME/development/flutter/bin/flutter run --pid-file $FLUTTER_PID --vmservice-out-file $FLUTTER_VM_PORT
+	elif [ "$1" == "-rav" ];then
 		$HOME/development/flutter/bin/flutter run -v --pid-file $FLUTTER_PID --vmservice-out-file $FLUTTER_VM_PORT
+	elif [ "$1" == "-pg" ];then
+		$HOME/development/flutter/bin/flutter pub get
+	elif [ "$1" == "-pgv" ];then
+		$HOME/development/flutter/bin/flutter pub get -v
 	elif [ "$1" == "-df" ];then
 		firefox --new-tab $(awk -F 'ws://|ws' '{print $2}' $FLUTTER_VM_PORT) 
 	elif [ "$1" == "-hl" ];then
