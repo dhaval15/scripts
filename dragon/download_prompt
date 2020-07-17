@@ -1,0 +1,5 @@
+#!/bin/zsh 
+arg=$(dragon-drag-and-drop --target --and-exit) 
+if [ "$arg" ]; then
+	wget -P $HOME/Downloads $arg 
+fi
