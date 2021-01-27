@@ -1,0 +1,2 @@
+#!/bin/sh
+/home/dhaval/Dev/packages/flutter-master/bin/flutter $@

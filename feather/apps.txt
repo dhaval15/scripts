@@ -1,0 +1,7 @@
+feather		:	feather
+browser		:	qute_create
+typora		:	typora
+writer		:	focuswriter
+zathura		:	zathura
+files		:	alacritty --class Ranger -e ranger
+notebook	:	notebook

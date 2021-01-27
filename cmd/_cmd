@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ "$2" ]; then
+	regex="$2\s*:"
+	echo "$(cat $HOME/scripts/cmd/$1.txt | rg $regex | awk -F ':' '{print $2}')"
+else
+	cat "$HOME/scripts/cmd/$1.txt"
+fi

@@ -1,0 +1,5 @@
+#!/bin/sh
+xset r rate 250 60
+cd /home/dhaval/Write
+alacritty --config-file /home/dhaval/.config/alacritty/feather.yml -e fvim
+

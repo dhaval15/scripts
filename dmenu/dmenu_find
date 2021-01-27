@@ -1,0 +1,3 @@
+#!/bin/sh
+choice=$(find | dmenu -p Find -c -bw 2 -l 20 -g 1 -cw 700)
+echo "$choice"

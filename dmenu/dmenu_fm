@@ -1,0 +1,16 @@
+#!/bin/zsh
+
+if [ "$1" ]; then
+	cd "$1"
+fi
+
+selected=$(ls | dmenu -l 10 -g 1 -c -bw 2 -p Files)
+
+if [ "$selected" ]; then
+	selected_path="$(pwd)/$selected"
+	if [ -d "$selected_path" ]; then
+		dmenu_fm "$selected_path"
+	else
+		xdg-open "$selected_path"
+	fi
+fi

@@ -1,6 +1,6 @@
 #!/bin/zsh 
 case $BUTTON in
-	1) networkmanager_dmenu -theme wifi;;
+	1) rofi_wifi;;
 esac
 connected=$(iwgetid | awk -F'["]' '{print $2}')
 if [ "$connected" = "" ]; then

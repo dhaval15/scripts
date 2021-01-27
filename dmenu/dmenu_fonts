@@ -1,0 +1,5 @@
+#!/bin/zsh
+choice=$(fc-list | awk -F ':' '{print $1}'| dmenu -p Fonts -c -bw 2 -l 10 -g 1 -h 24 -cw 700)
+if [ "$choice" ]; then
+	display "$choice"
+fi

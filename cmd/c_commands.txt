@@ -1,0 +1,5 @@
+i	: vim /home/dhaval/scripts/cmd/c_commands.txt
+d 	: cd /home/dhaval/Documents
+z 	: cd /home/dhaval/Downloads
+s 	: cd /home/dhaval/scripts
+w 	: cd /home/dhaval/Workspace

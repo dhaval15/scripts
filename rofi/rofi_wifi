@@ -12,6 +12,7 @@ Add dmenu formatting options and default terminal if desired to
 ~/.config/networkmanager-dmenu/config.ini
 
 """
+from gi.repository import GLib, NM  # pylint: disable=wrong-import-position
 import configparser
 import itertools
 import locale
@@ -24,7 +25,6 @@ from subprocess import Popen, PIPE
 
 import gi
 gi.require_version('NM', '1.0')
-from gi.repository import GLib, NM  # pylint: disable=wrong-import-position
 
 ENV = os.environ.copy()
 ENV['LC_ALL'] = 'C'
@@ -44,11 +44,12 @@ def dmenu_cmd(num_lines, prompt="Networks", active_lines=None):  # pylint: disab
                 dmenu -l <num_lines> -p <prompt> -i ...
 
     """
-    dmenu_command = "dmenu2"
+    dmenu_command = "dmenu"
     conf = configparser.ConfigParser()
     conf.read(expanduser("~/.config/networkmanager-dmenu/config.ini"))
     if not conf.sections():
-        res = [dmenu_command, "-i", "-l", str(num_lines), "-p", str(prompt)]
+        res = [dmenu_command, "-i", "-l",
+               str(num_lines), "-p", str(prompt), "-h", "20", "-bw", "2", "-c"]
         res.extend(sys.argv[1:])
         return res
     if conf.has_section('dmenu'):
@@ -140,7 +141,8 @@ def is_modemmanager_installed():
     """Check if ModemManager is installed"""
     with open(os.devnull) as devnull:
         try:
-            Popen(["ModemManager"], stdout=devnull, stderr=devnull).communicate()
+            Popen(["ModemManager"], stdout=devnull,
+                  stderr=devnull).communicate()
         except OSError:
             return False
         return True
@@ -213,6 +215,7 @@ def ap_security(nm_ap):
 
 class Action():  # pylint: disable=too-few-public-methods
     """Helper class to execute functions from a string variable"""
+
     def __init__(self,
                  name,
                  func,
@@ -290,7 +293,8 @@ def create_ap_actions(aps, active_ap, active_connection, adapter):  # pylint: di
         wifi_chars = conf.get("dmenu", "wifi_chars") \
             if conf.has_option("dmenu", "wifi_chars") else False
         if wifi_chars:
-            bars = "".join([wifi_chars[i] for i, j in enumerate(bars) if j == '*'])
+            bars = "".join([wifi_chars[i]
+                            for i, j in enumerate(bars) if j == '*'])
         is_active = nm_ap.get_bssid() == active_ap_bssid
         compact = conf.getboolean("dmenu", "compact") \
             if conf.has_option('dmenu', 'compact') else False
@@ -571,7 +575,8 @@ def create_wifi_profile(nm_ap, password, adapter):
     s_wifi = NM.SettingWireless.new()
     s_wifi.set_property(NM.SETTING_WIRELESS_SSID, nm_ap.get_ssid())
     s_wifi.set_property(NM.SETTING_WIRELESS_MODE, 'infrastructure')
-    s_wifi.set_property(NM.SETTING_WIRELESS_MAC_ADDRESS, adapter.get_permanent_hw_address())
+    s_wifi.set_property(NM.SETTING_WIRELESS_MAC_ADDRESS,
+                        adapter.get_permanent_hw_address())
     profile.add_setting(s_wifi)
 
     s_ip4 = NM.SettingIP4Config.new()

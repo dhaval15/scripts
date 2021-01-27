@@ -1,0 +1,2 @@
+#!/bin/sh
+sshfs -p 2222 create@192.168.43.1:/ $HOME/Remote

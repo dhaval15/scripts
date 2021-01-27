@@ -1,3 +1,4 @@
-#!/bin/zsh 
-cd "$HOME/Write/"
-alacritty --config-file $HOME/.config/alacritty/feather/alacritty.yml --class VimWriter -t Feather -e fvim
+#!/bin/sh
+xset r rate 250 60
+cd $HOME/Write/
+alacritty --config-file $HOME/.config/alacritty/feather.yml --class Feather -e fvim
