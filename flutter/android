@@ -1,0 +1,4 @@
+#!/bin/sh 
+$HOME/Dev/packages/android/emulator/emulator -avd Minimal
+
+

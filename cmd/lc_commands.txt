@@ -1,0 +1,8 @@
+edit : vim /home/dhaval/scripts/misc/lc_commands.txt
+main : vim lib/main.dart
+runa : flutter run
+rl : mflutter -d linux
+rw : mflutter -d web
+bl: mflutter build linux
+bw: mflutter build web 
+g : flutter pub get

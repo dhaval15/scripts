@@ -1,6 +1,6 @@
 #!/bin/zsh 
 case $BUTTON in
-	1) connman-gtk;;
+	1) rofi_wifi;;
 esac
 connected=$(iwgetid | awk -F'["]' '{print $2}')
 if [ "$connected" = "" ]; then

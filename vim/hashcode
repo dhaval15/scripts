@@ -1,2 +1,2 @@
 #!/bin/zsh
-alacritty --config-file $HOME/.config/alacritty/hashcode/alacritty.yml --class Develop -t HashCode -e nvim $@
+alacritty --config-file $HOME/.config/alacritty/hashcode.yml --class Develop -t HashCode -e nvim $@

@@ -1,0 +1,6 @@
+Restart Polybar 	: .config/polybar/launch.sh
+Restart Openbox		: openbox --restart
+Restart Awesome		: awesome --restart
+Polybar Themes 		: .config/polybar/scripts/style-switch.sh
+Restart Plank		: plank
+Restart Compositer 	: compton --config .config/compton.conf

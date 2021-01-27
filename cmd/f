@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ "$1" ]; then
+	$(_cmd f_commands "$1") "${@:2}"
+else
+	_cmd f_commands
+fi

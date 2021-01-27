@@ -1,11 +1,11 @@
 #!/bin/sh
-ANS=$(echo "|||累|襤" | \
+ANS=$(echo "Lock|Hibernate|Logout|Reboot|Shutdown" | \
                 rofi -sep "|" -dmenu -i -p '' "" -width 20 \
                 -hide-scrollbar -eh 1 -line-padding 4 -padding 50 -lines 4 -theme "exit")
             case "$ANS" in
-                *) dm-tool lock;;
-		*) systemctl hibernate;;
-		*) awesome-client "awesome.quit()"; fluxbox-remote "exit"; pkill dwm; qshell -c "shutdown()";;
-                *累) systemctl reboot ;;
-                *襤) systemctl poweroff
+                *Lock) dm-tool lock;;
+		*Hibernate) systemctl hibernate;;
+		*Logout) pkill dwm; pkill xmonad; pkill bspx; pkill feather_wm;openbox --exit;;
+                *Reboot) systemctl reboot ;;
+                *Shutdown) systemctl poweroff ;;
             esac
