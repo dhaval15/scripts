@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "$1"
+ANS=$(echo "Copy\nMove\nOpen\nPrint\nRead" | fzf) 
+if [ "$ANS" ]; then
+fi

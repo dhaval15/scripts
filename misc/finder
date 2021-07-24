@@ -1,17 +1,2 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
-finder(){
-  if [ $1 ]
-  then
-    if [ $2 ]
-    then
-      exo-open $2
-    else
-      fd $1
-    fi
-  else
-    echo "Search"
-  fi
-}
-
-finder $@

@@ -1,0 +1,19 @@
+#!/bin/sh
+# days="Today\nTomorrow\nYesterday\nCreate"
+# day=$(printf "$days" | dmenu -c -bw 2 -i -p "Calender" -g 1 -l 10)
+# if [ "$day" ]; then	
+# 	if [ "$day" = "Create" ]; then
+# 		dayIndex=$(printf "" | dmenu -c -bw 2 -i -p "Day" -g 1 -l 1)
+# 		if [ "$dayIndex" ]; then
+# 		 	echo "$(habbit create ~/Dev/Write/daily "$dayIndex" | dmenu -i -c -bw 2 -p "Result" -g 1 -l 10)"
+# 		fi
+# 	else
+# 		case "$day" in
+# 			*Today) dayIndex="0";;
+# 			*Tomorrow) dayIndex="+1";;
+# 			*Yesterday) dayIndex="-1";;
+# 		esac
+# 		habbit markdown ~/Dev/Write/daily "$dayIndex" | kitty --class Habbit --config ~/.config/kitty/habbit.conf -e lookatme /tmp/habbit-day
+# 	fi
+# fi
+/home/dhaval/Dev/space/habbit/build/linux/x64/release/bundle/habbit

@@ -1,0 +1,5 @@
+#!/bin/sh
+ANS=$(paru -Pc | awk -F ' ' '{print $1}' | fzf) 
+if [ "$ANS" ]; then
+	paru -S "$ANS"
+fi

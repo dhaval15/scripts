@@ -1,6 +1,0 @@
-#!/bin/sh
-if [ "$1" ]; then
-	$(_cmd c_commands $1) "${@:2}"
-else
-	_cmd c_commands
-fi

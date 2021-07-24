@@ -18,4 +18,3 @@ if [ "$searchterm" ]; then
 		esac
 	fi
 fi
-

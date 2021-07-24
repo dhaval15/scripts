@@ -1,0 +1,30 @@
+Commands:vim /home/dhaval/scripts/cmd/f_commands.txt
+Edit:flute open
+Run :flutter run --pid-file /home/dhaval/.flutter_pid
+Run Verbose: flutter run -v --pid-file /home/dhaval/.flutter_pid
+Run on Linux: flutter run -d linux --pid-file /home/dhaval/.flutter_pid
+Run Verbose on Linux:flutter run -d linux -v --pid-file /home/dhaval/.flutter_pid
+Run on Web:flutter run -d chrome --pid-file /home/dhaval/.flutter_pid
+Run on Web with Port Canvas:flutter run -d web-server --web-renderer canvaskit --web-port=8888
+Run Verbose on Web:flutter run -d chrome -v --pid-file /home/dhaval/flutter_pid
+Run Test:flutter run lib/main_test.dart --pid-file /home/dhaval/.flutter_pid
+Run Test Verbose:flutter run lib/main_test.dart -v --pid-file /home/dhaval/.flutter_pid
+Run Test on Linux:flutter run -d linux --pid-file /home/dhaval/.flutter_pid lib/main_test.dart 
+Run Test Verbose on Linux:flutter run -d linux lib/main_test.dart -v --pid-file /home/dhaval/.flutter_pid
+Run Test on Web:flutter run -d chrome lib/main_test.dart --pid-file /home/dhaval/.flutter_pid
+Run Test Verbose on Web:flutter run -d chrome lib/main_test.dart -v --pid-file /home/dhaval/flutter_pid
+Build Split Apks:flutter build apk --target-platform android-arm,android-arm64,android-x64 --split-per-abi
+Build Split Apks Verbose:flutter build apk --target-platform android-arm,android-arm64,android-x64 --split-per-abi -v
+Build Linux:flutter build linux --release
+Build Linux Verbose:flutter build linux --release -v
+Build Web:flutter build web 
+Build Web Verbose:flutter build web  -v
+Pub Get Packages:flutter pub get
+Pub Get Packages Verbose:flutter pub get -v
+Dart Compile:dart compile exe
+Dart Compile Verbose:dart compile exe -v
+Dev Tools:flutter pub global run devtools
+Build Runner:flutter pub run build_runner build
+Build Runner Watch:flutter pub run build_runner watch
+Hot Reload:pkill -F /home/dhaval/.flutter_pid --signal SIGUSR1
+Hot Restart:pkill -F /home/dhaval/.flutter_pid --signal SIGUSR2

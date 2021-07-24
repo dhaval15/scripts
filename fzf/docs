@@ -1,0 +1,5 @@
+#!/bin/sh
+ANS=$(fd --type f --search-path "$HOME/Documents" -e '.pdf' | awk -F "$HOME/Documents/" '{print $2}' | dmenu -p Docs -l 15 -g 1) 
+if [ "$ANS" ]; then
+	zathura "$HOME/Documents/$ANS"
+fi

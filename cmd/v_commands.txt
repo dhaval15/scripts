@@ -1,6 +1,0 @@
-*	: clear
-i	: vim /home/dhaval/scripts/cmd/v_commands.txt
-e 	: vim /home/dhaval/.config/nvim/init.vim
-p 	: vim /home/dhaval/.config/nvim/plugins.vim
-k 	: vim /home/dhaval/.config/nvim/custom/keys.vim
-a	: vim /home/dhaval/.config/alacritty/alacritty.yml

@@ -1,0 +1,5 @@
+#!/bin/sh
+ANS=$(fd --type f -e "org" --search-path "$HOME/Dev/Write" | fzf --preview 'bat --color=always --style=header,grid --line-range :300 {}' --exact) 
+if [ "$ANS" ]; then
+	printf "$ANS"
+fi

@@ -1,0 +1,7 @@
+#!/bin/sh
+MUSIC_DIR="$HOME/Music/calm"
+RESULT=$(fd --type f -d 1 --search-path "$MUSIC_DIR" | awk -F '/' '{print $NF}' | awk -F '\\.mp3' '{print $1}' | dmenu -p Calm -c -cw 400 -bw 1 -l 16 -h 24 -i)
+if [ "$RESULT" ]; then
+	pkill mpv
+	mpv --loop "$MUSIC_DIR/$RESULT.mp3"
+fi

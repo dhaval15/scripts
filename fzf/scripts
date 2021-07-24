@@ -1,0 +1,5 @@
+#!/bin/sh
+ANS=$(fd --type f --search-path "$HOME/Dev/scripts" -E '*.*' | awk -F "$HOME/Dev/scripts/" '{print $2}' | fzf --preview 'bat --color=always --style=header,grid --line-range :300 {}' --prompt "Scripts: ") 
+if [ "$ANS" ]; then
+	vim "$ANS"
+fi

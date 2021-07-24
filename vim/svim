@@ -1,2 +1,0 @@
-#!/bin/zsh
-nvim -u $HOME/.config/spacevim/config/main.vim "$@"

@@ -1,2 +1,0 @@
-#!/bin/zsh 
-alacritty -e tmux new-session -A -s Main

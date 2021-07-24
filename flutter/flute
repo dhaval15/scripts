@@ -5,10 +5,6 @@ FLUTTER_COMMAND="flutter"
 main(){
 	if [ "$1" == "open" ];then
 		open_flutter_project
-	elif [ "$1" == "run" ];then
-		run_flutter_project
-	elif [ "$1" == "get" ];then
-		get_flutter_project
 	fi
 
 }
@@ -16,24 +12,16 @@ main(){
 open_flutter_project(){
 	project=$(ls lib/ | rg "$(pwd | awk -F '/' '{print $NF}').dart")
 	if [ "$project" ];then
-		vim lib/$project
+		nvim lib/$project
 	else
 		project=$(ls lib/ | rg "main.dart")
 		if [ "$project" ];then
-			vim lib/$project
+			nvim lib/$project
 		else
 			project=$(pwd | awk -F '/' '{print $NF}')
-			vim bin/$project.dart
+			nvim bin/$project.dart
 		fi
 	fi
-}
-
-run_flutter_project(){
-	mflutter run -d linux
-}
-
-get_flutter_project(){
-	flutter pub get
 }
 
 main $@

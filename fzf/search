@@ -1,0 +1,5 @@
+#!/bin/sh
+result=$(fzf)
+if [ "$result" ]; then
+	vim "$result"
+fi
