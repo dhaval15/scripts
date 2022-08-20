@@ -1,8 +1,0 @@
-Feather		:	feather
-Browser		:	qute_create
-Typora		:	typora
-Emacs		:       emacsclient -c
-Writer		:	focuswriter
-Zathura		:	zathura
-Files		:	alacritty --class Ranger -e ranger
-Notebook	:	notebook

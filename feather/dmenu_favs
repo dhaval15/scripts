@@ -1,5 +1,0 @@
-#!/bin/sh
-app=$($HOME/scripts/feather/favs | dmenu -i)
-if [ "$app" ]; then
-	$HOME/scripts/feather/favs "$app"
-fi

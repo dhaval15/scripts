@@ -1,0 +1,28 @@
+#!/bin/sh 
+
+FLUTTER_COMMAND="flutter"
+
+main(){
+	if [ "$1" == "open" ];then
+		open_flutter_project
+	fi
+
+}
+
+open_flutter_project(){
+	project=$(ls lib/ | rg "$(pwd | awk -F '/' '{print $NF}').dart")
+	if [ "$project" ];then
+		nvim lib/$project
+	else
+		project=$(ls lib/ | rg "main.dart")
+		if [ "$project" ];then
+			nvim lib/$project
+		else
+			project=$(pwd | awk -F '/' '{print $NF}')
+			nvim bin/$project.dart
+		fi
+	fi
+}
+
+main $@
+

@@ -1,9 +1,0 @@
-#!/bin/sh
-ANS=$(fd --type f -e "dart" --search-path "$HOME/Dev/space" --search-path "$HOME/Cloned" --search-path "$HOME/Dev/space/packages" | fzf --preview 'bat --color=always --style=header,grid --line-range :300 {}') 
-if [ "$ANS" ]; then
-	if [ "$1" ]; then
-		$1 "$ANS"
-	else
-		printf "$ANS"
-	fi
-fi

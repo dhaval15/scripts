@@ -1,7 +1,0 @@
-#!/bin/sh
-isLaunched=$(ss -l | grep "mykitty")
-if [ "$isLaunched" ]; then
-	kitty @ --to unix:@mykitty launch --type=tab
-else
-	kitty --listen-on unix:@mykitty 
-fi

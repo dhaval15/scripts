@@ -1,0 +1,9 @@
+#!/bin/sh
+ANS=$(printf "Lock\nHibernate\nLogout\nReboot\nShutdown" | dmenu -i -c -cw 300 -bw 2 -l 5 -g 1 -fn 30 -p Exit)
+            case "$ANS" in
+                *Lock) dm-tool lock;;
+		*Hibernate) systemctl hibernate;;
+		*Logout) gnome-session-quit --no-prompt;;
+                *Reboot) systemctl reboot ;;
+                *Shutdown) systemctl poweroff ;;
+            esac

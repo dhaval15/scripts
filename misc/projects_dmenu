@@ -1,5 +1,0 @@
-#!/bin/zsh 
-arg=$(ls $HOME/Kitty | dmenu -p Projects) 
-if [ "$arg" ]; then
-	kitty --session $HOME/Kitty/$arg 
-fi

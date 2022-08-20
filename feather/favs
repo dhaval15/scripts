@@ -1,7 +1,0 @@
-#!/bin/sh
-if [ "$1" ]; then
-	regex="$1\s*:"
-	$(cat $HOME/scripts/feather/apps.txt | rg $regex | awk -F ':' '{print $2}')
-else
-	cat $HOME/scripts/feather/apps.txt | awk -F "$1s*:" '{print $1}' | sed 's/[ \t]*$//'
-fi

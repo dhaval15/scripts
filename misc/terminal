@@ -1,2 +1,0 @@
-#!/bin/sh
-alacritty --config-file /home/dhaval/.config/alacritty/terminal.yml

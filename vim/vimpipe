@@ -1,8 +1,0 @@
-#!/bin/sh
-CACHE="$HOME/scripts/vim/vimpipe.txt"
-VIM_CONFIG="$HOME/scripts/vim/vimpipe.vim"
-echo "$@" > "$CACHE"
-vim -u "$VIM_CONFIG" "$CACHE"
-Output=$(cat "$CACHE")
-echo "" > "$CACHE"
-printf "$Output"

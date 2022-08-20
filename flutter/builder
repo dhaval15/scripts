@@ -1,5 +1,0 @@
-#!/bin/sh 
-
-/home/dhaval/Prototype/builder/lib/box_builder.exe $@
-
-

@@ -1,6 +1,0 @@
-#!/bin/sh
-arg=$("" |dmenu -h 20 -fn 'monospace 10' -nb "#231F20" -nf "#BA8866" -sb "#BA8866" -sf "#231F20" -p Calculator) 
-if [ "$arg" ]; then
-	result=$(calc "$arg" | tr -d "\t")
-	echo "$result" | dmenu
-fi

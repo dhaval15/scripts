@@ -1,2 +1,0 @@
-#!/bin/zsh
-nvim -u $HOME/.config/feather/init.vim -i $HOME/.local/share/feather/shada/main.shada "$@"

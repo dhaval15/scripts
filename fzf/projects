@@ -1,5 +1,5 @@
 #!/bin/sh
-ANS=$(fd --type d -d 1 --search-path "$HOME/Dev/space" --search-path "$HOME/Cloned" --search-path "$HOME/Dev/space/packages" | fzf) 
+ANS=$(fd --type d -d 1 --search-path "$HOME/Hive/projects" | fzf) 
 if [ "$ANS" ]; then
 	cd "$ANS"
 fi

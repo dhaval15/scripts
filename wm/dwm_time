@@ -1,0 +1,3 @@
+#!/bin/zsh
+echo "Signal Pressed : $BUTTON" > $HOME/scripts/log.txt
+echo "  $(date '+%b  %d  %a  %I : %M  %p') "

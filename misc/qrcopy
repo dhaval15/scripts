@@ -1,4 +1,0 @@
-#!/bin/sh
-text=$(xclip -o)
-qrencode "$text" -o /tmp/qrcopy.png
-sxiv /tmp/qrcopy.png

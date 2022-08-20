@@ -1,0 +1,8 @@
+#!/bin/zsh 
+case $BUTTON in
+	1) light -S 100;;
+	3) light -S 1;;
+	4) light -U 10;;
+	5) light -A 10;;
+esac
+echo "    $(light | sed 's/\..*//')  "

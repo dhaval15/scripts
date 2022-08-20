@@ -1,2 +1,0 @@
-#!/bin/zsh
-dmenu_run -p Run -c -bw 2 -l 10 -g 1 -h 24 -cw 700

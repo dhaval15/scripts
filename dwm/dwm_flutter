@@ -1,8 +1,0 @@
-#!/bin/zsh 
-case $BUTTON in
-	1) xbacklight -set 100;;
-	3) xbacklight -set 1;;
-	4) xbacklight -dec 10;;
-	5) xbacklight -inc 10;;
-esac
-echo "    $(xbacklight | sed 's/\..*//')  "

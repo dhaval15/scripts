@@ -1,2 +1,0 @@
-#!/bin/sh
-glow -s dark $1 | less

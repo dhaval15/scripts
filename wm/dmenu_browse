@@ -1,0 +1,20 @@
+#!/bin/zsh 
+
+run() {
+	echo "$2" >> $HOME/scripts/.data/search_history.txt && firefox --new-tab "$1$2" &
+}
+
+searchterm=$(cat $HOME/scripts/.data/search_history.txt | dmenu -p Browse) 
+if [ "$searchterm" ]; then
+	browse=$(echo "google\narchwiki\nwikipedia\nyoutube\ngithub\npubdart" | dmenu -p "Search On") 
+	if [ "$browse" ]; then	
+		case "$browse" in
+    		*google) run "https://www.google.com/search?&q=" "$searchterm" &;;
+    		*archwiki) run "https://wiki.archlinux.org/index.php?search=" "$searchterm" &;;
+    		*wikipedia) run "https://en.wikipedia.org/w/index.php?search=" "$searchterm" &;;
+    		*youtube) run "https://www.youtube.com/results?search_query=" "$searchterm" &;;
+    		*github) run "https://github.com/search?q=" "$searchterm" &;;
+    		*pubdart) run "https://pub.dev/packages?q=" "$searchterm" &;;
+		esac
+	fi
+fi

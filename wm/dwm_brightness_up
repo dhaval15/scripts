@@ -1,0 +1,3 @@
+#!/bin/zsh 
+xbacklight -inc 10
+pkill -RTMIN+7 dwmblocks
