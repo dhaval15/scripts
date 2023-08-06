@@ -1,10 +1,13 @@
-SCRIPTS_PATH="$HOME/scripts/"
+SCRIPTS_PATH="$HOME/Hive/scripts/"
 
 PATH="$PATH:$SCRIPTS_PATH/wm"
 PATH="$PATH:$SCRIPTS_PATH/dev"
 PATH="$PATH:$SCRIPTS_PATH/term"
+PATH="$PATH:$SCRIPTS_PATH/editor"
 PATH="$PATH:$SCRIPTS_PATH/writer"
 PATH="$PATH:$SCRIPTS_PATH/fzf"
+PATH="$PATH:$SCRIPTS_PATH/webapps"
+PATH="$PATH:$SCRIPTS_PATH/apps"
 
 compdefas () {
   if (($+_comps[$1])); then

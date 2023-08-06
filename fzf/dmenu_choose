@@ -1,0 +1,1 @@
+dmenu -i -c -cw 800 -bw 2 -l 20 -g 1 -fn 40 -p "$1"

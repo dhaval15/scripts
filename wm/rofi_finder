@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-rofi -show Finder -modi "Finder:finder" -theme finder

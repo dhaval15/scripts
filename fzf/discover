@@ -1,0 +1,7 @@
+#!/bin/sh
+cd "$HOME/Hive/Realm/Discover"
+ans=$(sqlite3 index.db "SELECT title FROM nodes" | awk -F '"' '{print $2}' | "$GUI_MENU_COMMAND" "Discover") 
+if [ "$ans" ]; then
+	file=$(sqlite3 index.db "SELECT file FROM nodes WHERE title = '\"$ans\"'" | awk -F '"' '{print $2}')
+	zathura "$file"
+fi

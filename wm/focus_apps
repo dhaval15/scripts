@@ -1,0 +1,10 @@
+#!/bin/sh
+ANS=$(printf "Emacs Frame\nEmacs Daemon\nKill Emacs\nZathura\nBrowser\nTheme" | dmenu -fn "Fira Code 16" -i -c -cw 400 -bw 2 -l 10 -g 1 -h 36)
+case "$ANS" in
+	*Emacs\ Frame) emacsui;;
+	*Emacs\ Daemon) emacsd;;
+	*Kill\ Emacs) pkill emacs;;
+	*Zathura) zathura;;
+	*Browser) chromium;;
+	*Theme) focus_wallpaper;;
+esac

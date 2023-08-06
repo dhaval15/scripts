@@ -1,4 +1,3 @@
-#!/bin/zsh 
 case $BUTTON in
 	1) pamixer --toggle-mute;;
 	4) pamixer -d 5;;

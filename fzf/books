@@ -1,6 +1,6 @@
 #!/bin/sh
 cd "$HOME/Hive/Realm"
-ANS=$(fd --type f -e '.pdf' | "$GUI_MENU_COMMAND" "Docs") 
+ANS=$(fd --type f -e '.epub' | "$GUI_MENU_COMMAND" "Docs") 
 if [ "$ANS" ]; then
 	zathura "$HOME/Hive/Realm/$ANS"
 fi

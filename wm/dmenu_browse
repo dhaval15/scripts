@@ -1,5 +1,3 @@
-#!/bin/zsh 
-
 run() {
 	echo "$2" >> $HOME/scripts/.data/search_history.txt && firefox --new-tab "$1$2" &
 }
